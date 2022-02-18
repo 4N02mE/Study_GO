@@ -34,6 +34,8 @@ func main() {
 	fmt.Println("Float:", float_, "Byte_:", byte_, "Rune:", rune_)
 
 	/*
+		문자열
+
 		문자열 리터럴은 ` ` 혹은 " "를 이용하여 표현 가능하다.
 
 		1. Back Quote(` `)
@@ -60,4 +62,27 @@ func main() {
 	fmt.Println(rawLiteral)
 	fmt.Println(interLiteral)
 
+	/*
+		데이터 타입 변환
+
+		하나의 데이터 타입에서 다른 데이터 타입으로 변환하기 위해서는
+		Type(value)과 같이 표현하고 이를 Type Conversion이라 부른다.
+		Ex)	float_ = float32(100) 	| float32 -> int
+			bytes_ = []byte("ABC") 	| String -> Byte 배열
+
+		Go 에서는 타입간 변환은 명시적으로 지정해 주어야 한다.
+		예로 정수형 int에서 uint로 변환할 때 암묵적으로 변환이
+		일어나지 않으므로 아래 예시와 같이 반드시 변환을 지정해
+		주어야하며 명시적 지정없이 변환을 하면 런타임 에러가 발생한다.bool_
+		Ex) var i int = 100; var u uint = uint(i)
+	*/
+	var i int = 100
+	var u uint = uint(i)
+	var f float32 = float32(i)
+	fmt.Println(u, f)
+
+	var _str string = "ABC"
+	var _bytes []byte = []byte(_str)
+	var _str2 string = string(_bytes)
+	fmt.Println(_bytes, _str2)
 }
