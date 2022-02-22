@@ -50,4 +50,48 @@ func main() {
 	for index, name := range names {
 		fmt.Println("index: ", index, "| name: ", name)
 	}
+
+	/*
+		for 루프 내에서 빠져나오기 위해 사용하는 것들이 있다.
+		즉시 빠져나오기 위해서는 break,
+		루프 시작부분으로 바로 돌아가기 위해서는 continue,
+		임의의 문장으로 이동하기 위해서는 goto를 사용할 수 있다.
+
+		goto는 for 루프와 관련없이 사용될 수 있다.
+		break문은 for문 이외에 switch문이나 select문에서도 사용할 수 있다.
+		continue문은 for문과 연관되어 사용한다.
+	*/
+	var a int = 1
+	for a < 15 {
+		if a == 5 {
+			a += a
+			continue
+		}
+		a++
+		if a > 10 {
+			break
+		}
+	}
+	if a == 11 {
+		goto END
+	}
+	fmt.Println(a)
+END:
+	fmt.Println("End")
+
+	/*
+		break문은 보통 단독으로 사용되지만 경우에 따라 "break 레이블"과 같이
+		사용하여 지정된 레이블로 이동할 수 있다.
+		break의 "레이블"은 보통 현재의 for 루프를 바로 위에 적게 되는데
+		이러한 "break 레이블"은 현재의 루프를 빠져나와 지정된 레이블로 이동하고
+		break문의 직속 for루프 전체의 다음 문장을 실행하게 한다.
+	*/
+	y := 0
+L1:
+	for {
+		if y == 0 {
+			break L1
+		}
+	}
+	fmt.Println("OK")
 }
