@@ -17,7 +17,7 @@ func main() {
 		Ex) var x int | const y string
 
 		변수 선언 문법 4가지
-		var number_1 int 		-> 변수 선언 후 값 초기화
+		var number_1 int 	-> 변수 선언 후 값 초기화
 		num_1 = 0
 
 		var num_2 int = 0	-> 변수 선언과 동시에 초기화
@@ -35,6 +35,7 @@ func main() {
 			2. 선언과 초기화를 따로 할 수 없으며 선언할 때 초기화를
 			   같이 해주어야 한다.
 	*/
+
 	// 첫 번째 선언 방법
 	var number_1 int
 	number_1 = 1
@@ -51,17 +52,29 @@ func main() {
 	fmt.Println(number_1, number_2, number_3, number_4)
 
 	/*
-		여러 개의 변수 방법:
-		1. {name1}, {name2}, {name3} := {value1}, {value2}, {value3}
-		Ex) num_, str_, bool_ = 100, "string", true
+		여러 개의 변수 선언 문법
+		1. 한 줄로 선언
+		num_1, str_1, bool_1 := 0, "string", true
 
-		2. var ({name1} {type1}\n{name2} {type2}\n{name3} {type3})
-		Ex) var {
-				num_ int
-				str_ string
-				bool_ bool
-			}
+		2. ()로 묶어서 선언
+		var (
+			num_2 int
+			str_2 string
+			bool_2 bool
+		)
 
+		여러 개의 상수 선업 문법
+		1. 한 줄로 선언
+		const num_1, str_1, bool_1 := 0, "string", true
+
+		2. ()로 묶어서 선언
+		const (
+			num_2 int = 0
+			str_2 string = "string"
+			bool_2 bool = true
+		)
+
+		[!]	변수를
 		변수를 선언하고 초기화 할 때에는
 		반드시 선언하는 변수와 초기화하는 값의 개수가 같아야 하며,
 		타입은 똑같지 않아도 된다bool_1
