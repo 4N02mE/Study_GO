@@ -80,37 +80,23 @@ func main() {
 			반드시 선언하는 변수와 초기화하는 값의 개수가 같아야한다.
 			또한 타입이 똑같지 않아도 된다.
 	*/
-	number_5, str_5, bool_5 := 16, "다중선언", false
-	
+	number_5, str_5, bool_5 := 16, "변수 다중선언", false
+
 	const (
-		num_6 int =
+		number_6 int    = 32
+		str_6    string = "상수 다중선언"
+		bool_6   bool   = true
 	)
 
-	/*
-		상수 선언 방법
-		const num_5 int = 1
-
-		여러 개의 상수 선언 방법:
-		1. const {name1}, {name2}, {name3} = {value1}, {value2}, {value3}
-		Ex) const num_, str_, bool_ = 0, "", false
-
-		2. const ({name1} {type1}\n{name2} {type2}\n{name3} {type3})
-
-		Ex) const (
-				num_ int = 0
-				str_ string = ""
-				bool_ bool = true
-			)
-
-		상수 주의점
-		1. 한 번 선언되고 할당되면 값을 바꿀 수 없다.
-		2. 선언과 할당은 따로 할 수 없으며 선언할 떄 초기화를 같이 해주어야 한다.
-	*/
+	fmt.Println(number_5, str_5, bool_5)
+	fmt.Println(number_6, str_6, bool_6)
 }
 
 /*
-	전역 스코프에서 전역 변수 선언 시 주의 할 점
-	1. 단축 구문 사용시 문법 에러가 발생 -> "var a int = 1" O / "a := 1" X
-	2. 변수를 선언하고 따로 할당하는 것이 불가능
+	전역 변수 선언 방법
+	전역 변수 선언 시에는 전역 스코프에서 선언을 해야 한다.
+	"var num_0 int = 64"와 같이 완성형 문법으로 선언해야 하며,
+	단축 구묵을 사용하여 선언 시 문법 에러가 발생한다.
+	때문에 변수를 선언하고 후에 초기화하는 것이 불가능하다.
 */
 var global string = "This is Global Variable"
